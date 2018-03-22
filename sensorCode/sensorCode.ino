@@ -2,7 +2,7 @@ const int xPort = A0;
 const int yPort = A1;
 
 unsigned long targetTime=0;
-const unsigned long interval=2500; //TODO: How fast should we read
+const unsigned long interval=500; //TODO: How fast should we read
 void setup(){
   Serial.begin(115200);
 }

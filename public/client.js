@@ -21,8 +21,8 @@ var firstMessage=true;    // What the first message, to start on the first value
       //TODO: Map the incoming 10-bit numbers to the height and width of the screen.
       // See https://github.com/soulwire/sketch.js/wiki/API for sketch references
       console.log(newPosition);
-      var x = newPosition[0] / 1023.0 * 500;
-      var y = newPosition[1] / 1023.0 * 500;
+      var x = newPosition[0];
+      var y = newPosition[1];
       var pos = [x, y];
 
       if(firstMessage){ // if its the first message store that value as previous
