@@ -18,6 +18,7 @@ void loop(){
     Serial.println(data);
 
     //Serial.write(data);
+    Serial.write("Hello world\r\n");
 
 		 //TODO: Add other sensor read outs
      //TODO: convert values into a string https://www.arduino.cc/en/Tutorial/StringConstructors
