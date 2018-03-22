@@ -37,6 +37,7 @@ parser.on('data', function(data) { // on data from the arduino
   }else{ // any other data we try to forward by spliting it
     var transmitData = [data.split(',')[0],data.split(',')[1]];
     io.emit('new-pos', transmitData);
+    console.log(transmitData);
   }
 });
 //----------------------------------------------------------------------------//
