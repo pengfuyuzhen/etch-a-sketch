@@ -20,10 +20,14 @@ var firstMessage=true;    // What the first message, to start on the first value
 
       //TODO: Map the incoming 10-bit numbers to the height and width of the screen.
       // See https://github.com/soulwire/sketch.js/wiki/API for sketch references
+      console.log(newPosition);
+      var x = newPosition[0] / 1023.0 * 500;
+      var y = newPosition[1] / 1023.0 * 500;
+      var pos = [x, y];
 
       if(firstMessage){ // if its the first message store that value as previous
         firstMessage=false;
-        previousPosition=newPosition;
+        previousPosition=pos;
       }else{ // any other message we use to draw.
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
@@ -31,8 +35,8 @@ var firstMessage=true;    // What the first message, to start on the first value
         ctx.lineWidth = radius;
         ctx.beginPath();  //begin a adrawing
         ctx.moveTo( previousPosition[0], previousPosition[1] ); // from
-        ctx.lineTo( newPosition[0],  newPosition[1]); // to
+        ctx.lineTo( pos[0],  pos[1]); // to
         ctx.stroke(); // and only draw a stroke
-        previousPosition=newPosition; // update to the new position.
+        previousPosition=pos; // update to the new position.
        }
     });

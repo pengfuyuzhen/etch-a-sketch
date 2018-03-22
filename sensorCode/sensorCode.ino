@@ -14,11 +14,7 @@ void loop(){
 		String x = String(analogRead(xPort));
     String y = String(analogRead(yPort));
     String data = x + "," + y;
-
     Serial.println(data);
-
-    //Serial.write(data);
-    Serial.write("Hello world\r\n");
 
 		 //TODO: Add other sensor read outs
      //TODO: convert values into a string https://www.arduino.cc/en/Tutorial/StringConstructors
