@@ -15,7 +15,7 @@ void loop(){
     String y = String(analogRead(yPort));
     String data = x + "," + y;
 
-    Serial.print(data);
+    Serial.println(data);
 
     //Serial.write(data);
 
