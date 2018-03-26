@@ -1,5 +1,5 @@
 var COLOUR =  '#505050';  // This is the drawing color
-var radius = 10;           // Constant radio for the line
+var radius = 4;           // Constant radio for the line
 var socket = io();        // websocket to the server
 var previousPosition=[0,0]; // previous position to draw a line from
 var ctx = Sketch.create(); //Creating the drawing context
@@ -24,7 +24,7 @@ var firstMessage=true;    // What the first message, to start on the first value
       console.log(newPosition);
       var x = 1000 -(newPosition[0] - 250) * 1000 / 150.0
       var y = (newPosition[1] - 250)*1000/250.0;
-      var width = (1000 - newPosition[2]) / 10.0;
+      var width = Math.max((1000 - newPosition[2]) / 6.0, radius);
       var pos = [x, y];
 
       if(firstMessage){ // if its the first message store that value as previous
