@@ -8,13 +8,13 @@ void setup(){
 }
 
 void loop(){  
-  
   if (digitalRead(resetPort) == 0) {
     Serial.println("rst");
-  } else if (analogRead(fsrPort) < 1023) {
+  } else if (analogRead(fsrPort) < 1000) {
     String x = String(analogRead(xPort));
     String y = String(analogRead(yPort));
-    String data = x + "," + y;
+    String force = String(analogRead(fsrPort));
+    String data = x + "," + y + "," + force;
     Serial.println(data);
     delay(10);
   }

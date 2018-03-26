@@ -24,6 +24,7 @@ var firstMessage=true;    // What the first message, to start on the first value
       console.log(newPosition);
       var x = 1000 -(newPosition[0] - 250) * 1000 / 150.0
       var y = (newPosition[1] - 250)*1000/250.0;
+      var width = (1000 - newPosition[2]) / 10.0;
       var pos = [x, y];
 
       if(firstMessage){ // if its the first message store that value as previous
@@ -33,7 +34,7 @@ var firstMessage=true;    // What the first message, to start on the first value
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
         ctx.fillStyle = ctx.strokeStyle = COLOUR;
-        ctx.lineWidth = radius;
+        ctx.lineWidth = width;
         ctx.beginPath();  //begin a adrawing
         ctx.moveTo( previousPosition[0], previousPosition[1] ); // from
         ctx.lineTo( pos[0],  pos[1]); // to
