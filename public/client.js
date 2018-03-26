@@ -14,6 +14,7 @@ var firstMessage=true;    // What the first message, to start on the first value
     socket.on('reset', function() { // on a 'reset' message clean and reste firstMessage
       firstMessage=true;
       ctx.clear();
+      // Reference https://stackoverflow.com/a/5092846
       COLOUR = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     });
 
