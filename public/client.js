@@ -14,6 +14,7 @@ var firstMessage=true;    // What the first message, to start on the first value
     socket.on('reset', function() { // on a 'reset' message clean and reste firstMessage
       firstMessage=true;
       ctx.clear();
+      COLOUR = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     });
 
     socket.on('new-pos', function(newPosition) { // handling new sensor values
