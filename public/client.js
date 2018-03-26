@@ -1,5 +1,5 @@
 var COLOUR =  '#505050';  // This is the drawing color
-var radius = 3;           // Constant radio for the line
+var radius = 10;           // Constant radio for the line
 var socket = io();        // websocket to the server
 var previousPosition=[0,0]; // previous position to draw a line from
 var ctx = Sketch.create(); //Creating the drawing context
@@ -21,11 +21,9 @@ var firstMessage=true;    // What the first message, to start on the first value
       //TODO: Map the incoming 10-bit numbers to the height and width of the screen.
       // See https://github.com/soulwire/sketch.js/wiki/API for sketch references
 
-
-
       console.log(newPosition);
-      var x = 500 -(newPosition[0] - 250) * 500 / 150.0
-      var y = (newPosition[1] - 250)*500/250.0;
+      var x = 1000 -(newPosition[0] - 250) * 1000 / 150.0
+      var y = (newPosition[1] - 250)*1000/250.0;
       var pos = [x, y];
 
       if(firstMessage){ // if its the first message store that value as previous

@@ -18,7 +18,7 @@ void loop(){
     return;
   }
 
-	if(millis() < targetTime || analogRead(fsrPort) != fsrMax){
+	if(millis() < targetTime || analogRead(fsrPort) == fsrMax){
     return;
 	}
 
